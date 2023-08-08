@@ -21,22 +21,22 @@ h1 {
 .candidate-profile {
     border: 1px solid #ccc;
     padding: 10px;
-margin-bottom: 20px;
-            border-radius: 5px;
-        }
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
 
-        .profile-header {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
+.profile-header {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
 
-        .profile-content {
-            padding: 10px;
-        }
+.profile-content {
+    padding: 10px;
+}
 
-        .result-item {
-            margin-bottom: 10px;
-        }
+.result-item {
+    margin-bottom: 10px;
+}
