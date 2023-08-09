@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axis bank</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6V0sI6leJgBcqDtk1GMdzRLiPqfUfa-MMdA&usqp=CAU" class="logo">
+                </div>
+
+                <div class="nav-items">
+                    <div><a href="/job">Job Discription</a></div>
+                    <div><a href="#CV Ranking">CV Ranking</a></div>
+                    <div class="btn-pink">Register Now</div>
+                </div>
+            </div>
+            <form action="{{ url_for('upload_file') }}" method="POST" class="form1" enctype="multipart/form-data">
+                <div class="center-btn">
+                    <label for="cv-upload" class="upload-label">
+                        <span>Upload your CV</span>
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </label>
+                    <input type="file" id="cv-upload" name="cv" accept=".pdf, .doc, .docx">
+                    <input type="submit" value="Upload" class="btn">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
