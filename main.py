@@ -2,7 +2,8 @@ from flask import Flask,render_template,request,redirect,url_for
 import os
 from flask_mail import Mail,Message
 import json
-
+from candidate_processing import Candidate, generate_screening_questions, calculate_similarity
+import mysql.connector
 with open("config.json","r") as c:
    params=json.load(c)["params"]
 
@@ -23,7 +24,7 @@ mail=Mail(app)
 def home():
     return render_template('index.html')
 
-@app.route('/upload', methods=['POST'])
+@app.route('/uploads', methods=['POST'])
 def upload_file():
     if 'cv' not in request.files:
         return redirect(request.url)
@@ -48,7 +49,11 @@ def upload_file():
         msg.body = message_body
         mail.send(msg)
         
-        return redirect(url_for('home'))
+        candidate = Candidate("Candidate Name",job_description_match_score,cv_match_score)
+        questions = generate_screening_questions(candidate)
+        
+        response = "<br>".join(questions)
+        return response
     
 @app.route('/job')
 def job():
