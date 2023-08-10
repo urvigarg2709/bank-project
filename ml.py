@@ -131,7 +131,11 @@ df['Languages'] = [random.uniform(1, 5) for _ in range(len(df))]
 df['Certifications'] = [random.uniform(1, 5) for _ in range(len(df))]
 df[['Education', 'Experience', 'Skills', 'Languages', 'Certifications']] = scaler.fit_transform(
     df[['Education', 'Experience', 'Skills', 'Languages', 'Certifications']])
+X_cv = df[['Education', 'Experience', 'Skills', 'Languages', 'Certifications']].values
 
+# Scaling the features
+scaler = StandardScaler()
+X_cv = scaler.fit_transform(X_cv)
 # Splitting data into features and target
 y = df['Overall_Rating']
 
