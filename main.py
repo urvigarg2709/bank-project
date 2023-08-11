@@ -66,6 +66,8 @@ def upload_file():
         filename = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(filename)
         
+        recorded_video = record_video(interview_duration)
+        
         subject = "CV Upload Notification"
         sender_email = params['gmail-user']
         recipient_email = "example@gmail.com"  # Replace with the recipient's email
@@ -82,10 +84,20 @@ def upload_file():
         
         response = "<br>".join(questions)
         return response
+    return redirect(url_for('home'))
 
 @app.route('/job')
 def job():
     return render_template('job.html')
+
+@app.route('/hr')
+def hr():
+    return render_template('hr.html')
+
+@app.route('/pro')
+def pro():
+    return render_template('pro.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
