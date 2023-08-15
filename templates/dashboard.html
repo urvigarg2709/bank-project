@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/dashboard.css')}}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>HR Dashboard</h1>
+        <table class="cv-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Position</th>
+                    <th>View CV</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cv in cv_data %}
+                <tr>
+                    <td>{{ cv["name"] }}</td>
+                    <td>{{ cv["email"] }}</td>
+                    <td>{{ cv["position"] }}</td>
+                    <td><a href="{{ url_for('view_cv', filename=cv['filename']) }}">View</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <section class="graph-section">
+            <h2>Enrollment and Selection Status</h2>
+            <div id="enrollment-selection-graph"></div>
+        </section>
+    </div>
+    <script>
+        var enrollmentSelectionGraph = "{{ enrollment_selection_graph|safe }}";
+        var graphDiv = document.getElementById('enrollment-selection-graph');
+        graphDiv.innerHTML = enrollmentSelectionGraph;
+    </script>
+</body>
+</html>

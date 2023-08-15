@@ -7,18 +7,16 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/job.css')}}">
 </head>
 <body>
-    <div id="wrapper">
-       
-        <div class="container">
-            <h1 class="contactus-heading">Add your Job Discription</h1>
-           <form class="form" action="">
+    <div class="container">
+        <h1 class="contactus-heading">Add your Job Description</h1>
+        <form class="form" action="/dashboard">
             <div class="formfield-container">
-            <textarea name="message" id="" cols="30" rows="10" class="formfield formfield-textarea" placeholder="Enter Here"></textarea>
+                <textarea name="message" id="" cols="30" rows="10" class="formfield formfield-textarea" placeholder="Enter Here"></textarea>
             </div>
-          </form>
-            
-        </div>
-        
+            <div class="button-container">
+                <button type="submit" class="btn-pink" id="submit-btn">Submit<i class="submit-icon fa-solid fa-paper-plane"></i></button>
+            </div>
+        </form>
     </div>
 </body>
 </html>

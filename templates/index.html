@@ -14,7 +14,7 @@
             </div>
             <nav class="nav">
                 <a href="/job">Job Description</a>
-                <a href="#CV-Ranking">CV Ranking</a>
+                <a href="/cv_ranking">CV Ranking</a>
                 <div class="btn-pink">Register Now</div>
             </nav>
         </header>
@@ -32,9 +32,15 @@
             <section class="cv-upload-section">
                 <h2>Upload Your CV</h2>
                 <form action="{{ url_for('upload_file') }}" method="POST" class="form" enctype="multipart/form-data">
+                    <label for="cv-name">Your Name</label>
+                    <input type="text" id="cv-name" name="candidate_name" required>
+                    <label for="cv-email">Your Email</label>
+                    <input type="email" id="cv-email" name="candidate_email" required>
+                    <label for="cv-position">Your Position</label>
+                    <input type="text" id="cv-position" name="candidate_position" required>
                     <label for="cv-upload" class="upload-label">
                         <span>Choose File</span>
-                        <i class="fas fa-cloud-upload-alt"></i>
+                     <i class="fas fa-cloud-upload-alt"></i>
                     </label>
                     <input type="file" id="cv-upload" name="cv" accept=".pdf, .doc, .docx">
                     <input type="submit" value="Upload CV" class="btn">
