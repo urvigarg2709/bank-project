@@ -123,8 +123,8 @@ def pro():
 @app.route('/dashboard')
 def dashboard():
     enrolled_candidates = len(cv_data)
-    selected_candidates = 10  # Replace with the actual number of selected candidates
-    not_selected_candidates = enrolled_candidates - selected_candidates
+    selected_candidates = 0# Replace with the actual number of selected candidates
+    not_selected_candidates = 0
 
     enrollment_selection_data = [
         go.Bar(
