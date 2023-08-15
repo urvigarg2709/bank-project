@@ -31,8 +31,13 @@
         </table>
         <section class="graph-section">
             <h2>Enrollment and Selection Status</h2>
-            <div id="enrollment-selection-chart"></div>
+            <div id="enrollment-selection-graph"></div>
         </section>
     </div>
+    <script>
+        var enrollmentSelectionGraph = "{{ enrollment_selection_graph|safe }}";
+        var graphDiv = document.getElementById('enrollment-selection-graph');
+        graphDiv.innerHTML = enrollmentSelectionGraph;
+    </script>
 </body>
 </html>
